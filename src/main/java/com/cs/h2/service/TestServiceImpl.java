@@ -22,5 +22,15 @@ public class TestServiceImpl implements TestService{
 	public void createTest(Test test) {
 		 dao.createTest(test);
 	}
+
+	public void findOne(int id) {
+		dao.findOne(id);
+		
+	}
+
+	public void deleteTest(int id) {
+		dao.deleteTest(id);
+		
+	}
 	
 }
