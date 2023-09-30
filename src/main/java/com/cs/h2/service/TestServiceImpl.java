@@ -18,4 +18,9 @@ public class TestServiceImpl implements TestService{
 	public List<Test> test() {
 		return dao.getTest();
 	}
+	
+	public void createTest(Test test) {
+		 dao.createTest(test);
+	}
+	
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cs.h2.entity.Test;
@@ -23,6 +25,11 @@ public class TestController {
 	@GetMapping("/all")
 	public List<Test> getAll() {
 		return service.test();
+	}
+	
+	@PostMapping("/create")
+	public void create(@RequestBody Test test) {
+		 service.createTest(test);
 	}
 
 }
