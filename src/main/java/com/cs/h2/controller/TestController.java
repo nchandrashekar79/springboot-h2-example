@@ -46,7 +46,7 @@ public class TestController {
 		 service.findOne(id);
 	}
 	
-	@GetMapping("/find/{id}")
+	@GetMapping("/delete/{id}")
 	public void deleteTest(@PathVariable("id") int id) {
 		 service.deleteTest(id);
 	}
