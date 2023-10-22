@@ -27,7 +27,11 @@ public class CsvReadController {
 		return "load..";
 	}
 
-	public record Employee(String firstName, String lastName) {
+	/*
+	 * public record Employee(String firstName, String lastName) { }
+	 */
+	
+	public record Employee(String firstName, String lastName,String designation,String contact, String sal,String city) {
 	}
 
 	// First Name ,Last Name,Designation,Contact,Sal,City
@@ -39,12 +43,15 @@ public class CsvReadController {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String line;
+			int i =0;
 			while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
-
-				list.add(new Employee(values[0], values[1]));
+				
+				list.add(new Employee(values[0], values[1],values[2],values[3],values[4],values[5]));
 			}
 		}
+		
+		list.remove(0);
 
 		csvReadService.saveAll(list);
 

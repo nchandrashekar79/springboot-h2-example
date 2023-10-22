@@ -28,10 +28,13 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 		//String createEmployee = "create table employee (id int primary key , name varchar(30), email varchar(30))";
 		
-		String createEmployee = "create table employee ( fname varchar(30), lname varchar(30))";
+		//String createEmployee = "create table employee ( fname varchar(30), lname varchar(30))";
+		
+		
+		
+		String createEmployee2 = "create table employee ( fname varchar(30), lname varchar(30),designation varchar(30),contact varchar(30),sal varchar(30),city varchar(30))";
 
-
-		executeQuery(createEmployee);
+		executeQuery(createEmployee2);
 		//executeQuery(insertEmployee1);
 		//executeQuery(insertEmployee2);
  
