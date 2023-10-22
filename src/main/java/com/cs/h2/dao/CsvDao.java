@@ -15,14 +15,19 @@ public class CsvDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	private final String SQL_INSERT_TEST = "insert into Employee(id, name) values(?,?)";
+	private final String CSV_SQL_INSERT_TEST = "insert into Employee(fname, lname) values(?,?)";
 	
-	public void save(Test test) {
-		jdbcTemplate.update(SQL_INSERT_TEST,test.getId(), test.getName());
+
+	
+	public void save(Employee emp) {
+		jdbcTemplate.update(CSV_SQL_INSERT_TEST,emp.firstName(), emp.lastName());
 	}
 
 	public void saveAll(List<Employee> list) {
 		
+		for (Employee employee : list) {
+			save(employee);
+		}
 	}
 
 }

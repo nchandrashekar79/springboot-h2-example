@@ -26,23 +26,25 @@ public class DatabaseInitializer implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		logger.info("Database data initialize.");
 
-		String createEmployee = "create table employee (id int primary key , name varchar(30), email varchar(30))";
+		//String createEmployee = "create table employee (id int primary key , name varchar(30), email varchar(30))";
+		
+		String createEmployee = "create table employee ( fname varchar(30), lname varchar(30))";
 
-		String insertEmployee1 = "insert into employee (name, email) values (1,'Will Smith', 'will.smith@holywood.com')";
-
-		String insertEmployee2 = "insert into employee (name, email) values (2,'Bill Gates', 'bill.gates@microsoft.com')";
 
 		executeQuery(createEmployee);
-		executeQuery(insertEmployee1);
-		executeQuery(insertEmployee2);
-
+		//executeQuery(insertEmployee1);
+		//executeQuery(insertEmployee2);
+ 
 	}
 
 	public void executeQuery(String query) {
 		try {
 			jdbcTemplate.execute(query);
 		} catch (Exception e) {
-			logger.info("Error .." + e.getMessage());
+			logger.info("Error .." + e.getCause());
+		}
+		finally {
+			logger.info("final block ..");
 		}
 	}
 }
