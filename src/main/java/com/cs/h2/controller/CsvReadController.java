@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cs.h2.service.CsvService;
+import com.cs.h2.serviceimpl.CsvService;
 
 @RestController
 @RequestMapping("csvreader")

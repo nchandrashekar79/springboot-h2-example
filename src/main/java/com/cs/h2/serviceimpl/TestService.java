@@ -1,4 +1,4 @@
-package com.cs.h2.service;
+package com.cs.h2.serviceimpl;
 
 public interface TestService {
 
